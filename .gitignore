@@ -7,6 +7,9 @@ venv/
 env/
 .venv/
 .env/
+.env
+.env.*
+!.env.example
 *.egg-info/
 dist/
 build/
@@ -18,3 +21,11 @@ build/
 *.swp
 *.swo
 *~
+.mplconfig/
+.zcode/
+test_reports/
+*.tmp.xlsx
+~$*
+tools/node_modules/
+.pytest_cache/
+.ruff_cache/

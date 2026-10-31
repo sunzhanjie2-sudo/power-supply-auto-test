@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import Optional
 
 
-class BaseInstrument(ABC):
-    def __init__(self, comm):
+class InstrumentBase(ABC):
+    def __init__(self, comm=None):
         self.comm = comm
         self.connected = False
 
@@ -19,10 +19,19 @@ class BaseInstrument(ABC):
     def get_idn(self) -> Optional[str]:
         pass
 
-    def send_command(self, command: str, wait_response: bool = False) -> Optional[str]:
+    def send_command(self, command: str, wait_response: bool = False, timeout=None) -> Optional[str]:
         if self.comm and self.connected:
+            if timeout is not None:
+                return self.comm.send_command(command, wait_response, timeout)
             return self.comm.send_command(command, wait_response)
         return None
 
-    def query(self, command: str) -> Optional[str]:
-        return self.send_command(command, wait_response=True)
+    def query(self, command: str, timeout=None) -> Optional[str]:
+        return self.send_command(command, wait_response=True, timeout=timeout)
+
+    def reset(self) -> bool:
+        # *RST 为无应答命令，写入成功即视为已执行
+        if not (self.comm and self.connected):
+            return False
+        self.send_command('*RST')
+        return True

@@ -1,0 +1,12 @@
+{
+  "origin": "E:/CODE/scope/scopeapp",
+  "version": "0.3.0",
+  "files": {
+    "model.py": "1b0eacedf49fc8d4580d065ca5e5740f37181b24099ad6b825dee512c3ebe4c2",
+    "archive.py": "556e689557f667efc0bf43db5919a228e3807e0ef280b2335402660490b564b3",
+    "measurements.py": "00c554657818d14fcb99727164b7e3e786230b71267301fa9e5285466b6a64bf",
+    "screen_render.py": "7caebb4eb919e628e4ab768d13dda40004c73434d3735af28e10f49e6569ece2",
+    "ui/scope_view.py": "a79d0e0aa7f0fe2d004d4eed2e4af4463363623e55c998acb4fd6af4741ad742",
+    "ui/fonts.py": "fa29a126b4505af25bad0c67f1ad0a32803819bf5065be12ba4e7252a651bffa"
+  }
+}

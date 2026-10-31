@@ -2,4 +2,9 @@ pyserial>=3.5
 PyQt5>=5.15.9
 numpy>=1.24.0
 matplotlib>=3.7.0
-scipy>=1.10.0
+openpyxl>=3.1.0
+# 可选：VISA 通信（USB-TMC/示波器扫描）
+pyvisa>=1.13.0
+pyvisa-py>=0.5.3
+# 可选：USB-TMC ctypes 直连后端（无需 NI-VISA）
+libusb-package>=1.0.26.2
